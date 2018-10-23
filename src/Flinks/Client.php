@@ -78,8 +78,6 @@ class Client
 			}
 		}
 
-		var_dump($request);
-
 		try
 		{
 			$response = static::getResource()->authorize($this->customer_id, $request);
@@ -170,8 +168,6 @@ class Client
 		try
 		{
 			$response = static::getResource()->getAccountsSummary($this->customer_id, $request);
-			var_dump($request);
-			var_dump($response);
 
 			static::getLogger()->addInfo(get_class($response) . ' for GetAccountsSummary request');
 		}
@@ -206,8 +202,6 @@ class Client
 		$request->setWithAccountIdentity($with_account_identity);
 		$request->setWithTransactions($with_transactions);
 		$request->setMostRecent($most_recent);
-
-		var_dump($request);
 
 		try
 		{
